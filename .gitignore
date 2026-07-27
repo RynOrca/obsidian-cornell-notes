@@ -27,4 +27,7 @@ REPO-SECURITY.md
 *.pem
 *.asc
 
+# Project management files (not part of the plugin)
+PLAN.md
+CHANGELOG.md
 data.json
