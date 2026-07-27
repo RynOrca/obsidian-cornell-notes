@@ -127,7 +127,12 @@ export function parseCornell(source: string): CornellBlock {
       if (inCue || inNote) flush();
       inCue = true;
       inNote = false;
-    } else if (t === '::note' && firstCueSeen) {
+    } else if (t === '::note') {
+      // Allow ::note even without a preceding ::cue (previously content was silently dropped)
+      if (!firstCueSeen) {
+        firstCueSeen = true;
+      }
+      if (inCue || inNote) flush();
       inCue = false;
       inNote = true;
     } else if (inCue) {
