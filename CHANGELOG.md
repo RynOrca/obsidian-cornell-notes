@@ -11,6 +11,7 @@
 
 ### fix: parser 修复
 - `::note` 在 `::cue` 之前出现不再被静默丢弃
+- `::cue` / `::note` 配对语义修正：`::cue` 总是行边界，`::note` 与最近 `::cue` 配对，连续 `::note` 各自独立行
 
 ### chore
 - tsconfig.json 添加 `skipLibCheck: true`（绕过 obsidian.d.ts 的 HistoryHandler 类型错误）

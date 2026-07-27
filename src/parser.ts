@@ -124,15 +124,18 @@ export function parseCornell(source: string): CornellBlock {
     const t = line.trim();
     if (t === '::cue') {
       if (!firstCueSeen) firstCueSeen = true;
+      // ::cue always starts a new row — flush whatever we were accumulating
       if (inCue || inNote) flush();
       inCue = true;
       inNote = false;
     } else if (t === '::note') {
-      // Allow ::note even without a preceding ::cue (previously content was silently dropped)
-      if (!firstCueSeen) {
-        firstCueSeen = true;
+      // ::note is valid even without a preceding ::cue
+      if (!firstCueSeen) firstCueSeen = true;
+      if (inNote) {
+        // Consecutive ::note — previous note becomes a standalone row
+        flush();
       }
-      if (inCue || inNote) flush();
+      // If inCue, don't flush: ::cue and ::note pair in the same row
       inCue = false;
       inNote = true;
     } else if (inCue) {
