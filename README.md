@@ -3,6 +3,8 @@
 Renders `cornell` fenced code blocks as a beautiful two-column
 [Cornell Notes](https://en.wikipedia.org/wiki/Cornell_Notes) layout in Reading view.
 
+> 🎯 Made with ❤️ by [Sergii Krymets](https://github.com/bytetiles) — contributions welcome!
+
 ![Desktop Note Example](.media/desktop-note-example.webp)
 
 ---
