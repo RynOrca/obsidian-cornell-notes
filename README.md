@@ -1,14 +1,15 @@
-# Cornell Notes for Obsidian
+# 📝 Cornell Notes for Obsidian
 
-Renders `cornell` fenced code blocks as a two-column
+Renders `cornell` fenced code blocks as a beautiful two-column
 [Cornell Notes](https://en.wikipedia.org/wiki/Cornell_Notes) layout in Reading view.
 
 ![Desktop Note Example](.media/desktop-note-example.webp)
 
 ---
 
-## Features
+## ✨ Features
 
+- **Fast rendering** — parallel Markdown rendering with smart caching, even large notes stay snappy
 - Two-column layout with configurable column widths (default 28% cues / 72% notes)
 - Supports any Markdown in both columns: paragraphs, lists, tables,
   code blocks, callouts, math, mermaid diagrams, images, wikilinks
@@ -19,7 +20,7 @@ Renders `cornell` fenced code blocks as a two-column
 
 ---
 
-## Installation
+## 🚀 Installation
 
 ### Community plugins (once approved)
 
@@ -137,3 +138,24 @@ On screens narrower than 700 px the columns stack vertically
 |-----------------------------------|-------------------------------------------------------------------|
 | `~sub~` / `^sup^` Obsidian syntax | ✗ Not rendered — use `<sub>` / `<sup>` HTML or Unicode (`₂`, `²`) |
 | Live Preview two-column layout    | ✗ Reading view only — edit mode shows plain text                  |
+
+---
+
+## 🛠 Troubleshooting
+
+### Notes not rendering (blank block)
+
+Make sure you're in **Reading view**, not Live Preview or Source mode.
+The two-column layout only renders in Reading view.
+
+### Block shows raw text instead of columns
+
+Check your backtick count — the outer fence must use **4 backticks** (` `````` `),
+especially if your notes contain triple-backtick code blocks.
+
+### Slow rendering with many rows
+
+This plugin uses parallel rendering and smart caching to minimize lag.
+If you experience slowdowns with unusually large blocks (50+ rows):
+- Consider splitting into multiple `cornell` blocks
+- Avoid deeply nested content inside individual cues/notes
